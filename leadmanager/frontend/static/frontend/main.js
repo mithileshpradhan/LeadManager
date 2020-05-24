@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./leadmanager/frontend/src/actions/types.js":
+/*!***************************************************!*\
+  !*** ./leadmanager/frontend/src/actions/types.js ***!
+  \***************************************************/
+/*! exports provided: GET_LEADS, DELETE_LEAD, ADD_LEAD */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GET_LEADS\", function() { return GET_LEADS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"DELETE_LEAD\", function() { return DELETE_LEAD; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ADD_LEAD\", function() { return ADD_LEAD; });\nvar GET_LEADS = 'GET_LEADS';\nvar DELETE_LEAD = 'DELETE_LEAD';\nvar ADD_LEAD = 'ADD_LEAD';\n\n//# sourceURL=webpack:///./leadmanager/frontend/src/actions/types.js?");
+
+/***/ }),
+
 /***/ "./leadmanager/frontend/src/components/App.js":
 /*!****************************************************!*\
   !*** ./leadmanager/frontend/src/components/App.js ***!
@@ -158,6 +170,30 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 
 /***/ }),
 
+/***/ "./leadmanager/frontend/src/reducers/index.js":
+/*!****************************************************!*\
+  !*** ./leadmanager/frontend/src/reducers/index.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _leads__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./leads */ \"./leadmanager/frontend/src/reducers/leads.js\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({\n  leads: _leads__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n}));\n\n//# sourceURL=webpack:///./leadmanager/frontend/src/reducers/index.js?");
+
+/***/ }),
+
+/***/ "./leadmanager/frontend/src/reducers/leads.js":
+/*!****************************************************!*\
+  !*** ./leadmanager/frontend/src/reducers/leads.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _actions_types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/types.js */ \"./leadmanager/frontend/src/actions/types.js\");\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\nvar initialState = {\n  leads: []\n};\n\nfunction leads() {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  switch (action.type) {\n    case _actions_types_js__WEBPACK_IMPORTED_MODULE_0__[\"GET_LEADS\"]:\n      return _objectSpread(_objectSpread({}, state), {}, {\n        leads: action.payload\n      });\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (leads);\n\n//# sourceURL=webpack:///./leadmanager/frontend/src/reducers/leads.js?");
+
+/***/ }),
+
 /***/ "./leadmanager/frontend/src/store.js":
 /*!*******************************************!*\
   !*** ./leadmanager/frontend/src/store.js ***!
@@ -166,7 +202,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-devtools-extension */ \"./node_modules/redux-devtools-extension/index.js\");\n/* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-thunk */ \"./node_modules/redux-thunk/es/index.js\");\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module './reducers'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\n\n\n\nvar initialState = {};\nvar middleware = [redux_thunk__WEBPACK_IMPORTED_MODULE_2__[\"default\"]];\nvar store = Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"createStore\"])(initialState, !(function webpackMissingModule() { var e = new Error(\"Cannot find module './reducers'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1___default()(redux__WEBPACK_IMPORTED_MODULE_0__[\"applyMiddleware\"].apply(void 0, middleware)));\n/* harmony default export */ __webpack_exports__[\"default\"] = (store);\n\n//# sourceURL=webpack:///./leadmanager/frontend/src/store.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-devtools-extension */ \"./node_modules/redux-devtools-extension/index.js\");\n/* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-thunk */ \"./node_modules/redux-thunk/es/index.js\");\n/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reducers */ \"./leadmanager/frontend/src/reducers/index.js\");\n\n\n\n\nvar initialState = {};\nvar middleware = [redux_thunk__WEBPACK_IMPORTED_MODULE_2__[\"default\"]];\nvar store = Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"createStore\"])(initialState, _reducers__WEBPACK_IMPORTED_MODULE_3__[\"default\"], redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1___default()(redux__WEBPACK_IMPORTED_MODULE_0__[\"applyMiddleware\"].apply(void 0, middleware)));\n/* harmony default export */ __webpack_exports__[\"default\"] = (store);\n\n//# sourceURL=webpack:///./leadmanager/frontend/src/store.js?");
 
 /***/ }),
 
